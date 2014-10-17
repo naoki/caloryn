@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Caloryn</title>
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+    <script src="lib/js/angular-route.min.js"></script>
+    <script src="lib/js/angular-cookies.min.js"></script>
+    <script src="lib/js/angularLocalStorage.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-app="caloryn">
+    <h1>caloryn</h1>
+    <div id="messageArea" ng-controller="MessageCtrl">
+        {{ message }}
+    </div>
+
+    <div class="searchInput">
+        <input type="search" ng-model="searchText" placeholder="食材/料理を入力">
+        <input type="text" ng-model="gram" placeholder="グラム数">
+    </div>
+
+    <div ng-controller="dataCtrl">
+        <ul class="animate-container">
+            <li class="animate-repeat" ng-repeat="row in data | filter:searchText" ng-click="click(row)">
+                {{row.name}}
+            </li>
+            <li class="animate-repeat" ng-if="results.length == 0">
+                No results found...
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
