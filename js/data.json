@@ -2,11 +2,109 @@
     {
         "name": "大根",
         "calory": 0.18,
-        "q": "ダイコンだいこんJapaneseRadish"
+        "q": "daikonダイコンだいこんJapaneseRadish",
+        "category": "野菜"
+    },
+    {
+        "name": "キャベツ",
+        "calory": 0.23,
+        "q": "kyabetsuきゃべつcabbage",
+        "category": "野菜"
+    },
+    {
+        "name": "アボカド",
+        "calory": 1.873,
+        "q": "あぼかどavocado",
+        "category": "野菜"
+    },
+    {
+        "name": "セロリ",
+        "calory": 0.15,
+        "q": "せろりcelery",
+        "category": "野菜"
+    },
+    {
+        "name": "トマト",
+        "calory": 0.1896,
+        "q": "とまとtomato",
+        "category": "野菜"
+    },
+    {
+        "name": "こんにゃく",
+        "calory": 0.191,
+        "q": "コンニャク蒟蒻konnyaku",
+        "category": "野菜"
+    },
+    {
+        "name": "レタス",
+        "calory": 0.1189,
+        "q": "れたすlattuce",
+        "category": "野菜"
+    },
+    {
+        "name": "醤油",
+        "calory": 0.7222,
+        "q": "しょうゆショウユsoysauce",
+        "category": "調味料"
+    },
+    {
+        "name": "砂糖",
+        "calory": 3.8888,
+        "q": "さとうサトウsugar",
+        "category": "調味料"
+    },
+    {
+        "name": "穀物酢",
+        "calory": 0.25,
+        "q": "おすこくもつすコクモツスvinegar",
+        "category": "調味料"
+    },
+    {
+        "name": "ガラスープ",
+        "calory": 2.19,
+        "q": "がらすーぷgarasoup",
+        "category": "調味料"
+    },
+    {
+        "name": "コンソメ（味の素）",
+        "calory": 2.264,
+        "q": "こんそめconsomme",
+        "category": "調味料"
+    },
+    {
+        "name": "味噌",
+        "calory": 1.98,
+        "q": "みそミソmiso",
+        "category": "調味料"
+    },
+    {
+        "name": "塩",
+        "calory": 0,
+        "q": "しおシオsalt",
+        "category": "調味料"
+    },
+    {
+        "name": "米酢",
+        "calory": 0.46,
+        "q": "おすこめずコメズvinegar",
+        "category": "調味料"
+    },
+    {
+        "name": "みりん",
+        "calory": 2.26,
+        "q": "ミリン味醂",
+        "category": "調味料"
+    },
+    {
+        "name": "日本酒",
+        "calory": 1.09,
+        "q": "にほんしゅニホンシュsake",
+        "category": "調味料"
     },
     {
         "name": "鶏の胸肉(皮なし)",
         "calory": 1.08,
-        "q": "とりのむねにくトリノムネニクChickenBreast"
+        "q": "torinomuneniku鳥の胸肉とりのむねにくトリノムネニクChickenBreast",
+        "category": "肉"
     }
 ]
