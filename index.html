@@ -29,26 +29,30 @@
                     <tr>
                         <th></th>
                         <th>食材/料理</th>
-                        <th>(g)</th>
+                        <th>weight(g)</th>
                         <th>(Kcal)</th>
+                        <th>protain(g)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in items">
                         <td><span ng-click="remove($index)" class="item-remover">X</span></td>
                         <td>
-                            <input value="{{item.name}}" type="text" placeholder="食材/料理" ng-model="item.name">
+                            <span class="itemName" ng-bind="item.name"></span>
                         </td>
                         <td>
                             <input value="{{item.gram}}" type="number" placeholder="グラム数" min="0" max="1000" ng-model="item.gram" ng-change="calc($index)">
                         </td>
-                        <td><span class="itemResult" ng-bind="item.result"></span></td>
+                        <td><span class="itemCalory" ng-bind="item.itemCalory"></span></td>
+                        <td><span class="itemProtain" ng-bind="item.itemProtain"></span></td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td style="text-align:right" colspan=3>TOTAL Calory</td>
-                        <td ng-bind="totalResult" class="totalResult"></td>
+                        <td style="text-align:right" colspan=2>TOTAL</td>
+                        <td ng-bind="totalWeight" class="totalWeight"></td>
+                        <td ng-bind="totalCalory" class="totalCalory"></td>
+                        <td ng-bind="totalProtain" class="totalProtain"></td>
                     </tr>
                 </tfoot>
             </table>

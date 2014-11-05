@@ -22,29 +22,38 @@ caloryn.controller('MessageCtrl', ['$scope', function($scope) {
 
 caloryn.controller('itemsCtrl', ['$scope', function ($scope) {
     $scope.items = [];
-    $scope.totalResult = 0;
+    $scope.totalWeight  = 0;
+    $scope.totalProtain = 0;
+    $scope.totalCalory  = 0;
     $scope.remove = function (index) {
         $scope.items.splice(index, 1);
         $scope.resetTotalResult();
     }
     $scope.calc = function (index) {
         var data = $scope.items[index];
-        data.result = Math.round(data.calory * data.gram);
+        data.itemProtain = Math.round(data.protain * data.gram);
+        data.itemCalory  = Math.round(data.calory * data.gram);
         $scope.resetTotalResult();
     }
     $scope.resetTotalResult = function () {
         var x, len;
-        $scope.totalResult = 0;
+        $scope.totalWeight  = 0;
+        $scope.totalProtain = 0;
+        $scope.totalCalory  = 0;
         for (x = 0, len = $scope.items.length; x < len; x++) {
-            $scope.totalResult += $scope.items[x].result;
+            $scope.totalWeight += $scope.items[x].gram;
+            $scope.totalProtain += $scope.items[x].itemProtain;
+            $scope.totalCalory  += $scope.items[x].itemCalory;
         }
     }
     $scope.$on('addItem', function (e, data) {
         $scope.items.push({
             "name": data.name,
             "gram": 0,
+            "protain": data.protain,
             "calory": data.calory,
-            "result": 0
+            "itemCalory": 0,
+            "itemProtain": 0
         });
     });
 }]);

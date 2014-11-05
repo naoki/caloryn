@@ -2,108 +2,126 @@
     {
         "name": "大根",
         "calory": 0.18,
+        "protain": 0.004,
         "q": "daikonダイコンだいこんJapaneseRadish",
         "category": "野菜"
     },
     {
         "name": "キャベツ",
         "calory": 0.23,
+        "protain": 0.013,
         "q": "kyabetsuきゃべつcabbage",
         "category": "野菜"
     },
     {
         "name": "アボカド",
         "calory": 1.873,
+        "protain": 0.025,
         "q": "あぼかどavocado",
         "category": "野菜"
     },
     {
         "name": "セロリ",
         "calory": 0.15,
+        "protain": 0.01,
         "q": "せろりcelery",
         "category": "野菜"
     },
     {
         "name": "トマト",
         "calory": 0.1896,
+        "protain": 0.007,
         "q": "とまとtomato",
         "category": "野菜"
     },
     {
         "name": "こんにゃく",
         "calory": 0.191,
+        "protain": 0.001,
         "q": "コンニャク蒟蒻konnyaku",
         "category": "野菜"
     },
     {
         "name": "レタス",
         "calory": 0.1189,
+        "protain": 0.006,
         "q": "れたすlattuce",
         "category": "野菜"
     },
     {
         "name": "醤油",
         "calory": 0.7222,
+        "protain": 0.077,
         "q": "しょうゆショウユsoysauce",
         "category": "調味料"
     },
     {
         "name": "砂糖",
         "calory": 3.8888,
+        "protain": 0,
         "q": "さとうサトウsugar",
         "category": "調味料"
     },
     {
         "name": "穀物酢",
         "calory": 0.25,
+        "protain": 0.001,
         "q": "おすこくもつすコクモツスvinegar",
         "category": "調味料"
     },
     {
         "name": "ガラスープ",
         "calory": 2.19,
+        "protain": 0.01,
         "q": "がらすーぷgarasoup",
         "category": "調味料"
     },
     {
         "name": "コンソメ（味の素）",
         "calory": 2.264,
+        "protain": 0.07,
         "q": "こんそめconsomme",
         "category": "調味料"
     },
     {
         "name": "味噌",
         "calory": 1.98,
+        "protain": 0.097,
         "q": "みそミソmiso",
         "category": "調味料"
     },
     {
         "name": "塩",
         "calory": 0,
+        "protain": 0,
         "q": "しおシオsalt",
         "category": "調味料"
     },
     {
         "name": "米酢",
         "calory": 0.46,
+        "protain": 0.002,
         "q": "おすこめずコメズvinegar",
         "category": "調味料"
     },
     {
         "name": "みりん",
         "calory": 2.26,
+        "protain": 0.003,
         "q": "ミリン味醂",
         "category": "調味料"
     },
     {
         "name": "日本酒",
         "calory": 1.09,
+        "protain": 0.004,
         "q": "にほんしゅニホンシュsake",
         "category": "調味料"
     },
     {
         "name": "鶏の胸肉(皮なし)",
         "calory": 1.08,
+        "protain": 0.223,
         "q": "torinomuneniku鳥の胸肉とりのむねにくトリノムネニクChickenBreast",
         "category": "肉"
     }
