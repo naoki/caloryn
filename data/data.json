@@ -1,0 +1,331 @@
+[
+    {
+        "name": "大根",
+        "calory": 0.18,
+        "protain": 0.004,
+        "q": "daikonダイコンだいこんJapaneseRadish",
+        "label": ["野菜"]
+    },
+    {
+        "name": "キャベツ",
+        "calory": 0.23,
+        "protain": 0.013,
+        "q": "kyabetsuきゃべつcabbage",
+        "label": ["野菜"]
+    },
+    {
+        "name": "アボカド",
+        "calory": 1.873,
+        "protain": 0.025,
+        "q": "あぼかどavocado",
+        "label": ["野菜"]
+    },
+    {
+        "name": "セロリ",
+        "calory": 0.15,
+        "protain": 0.01,
+        "q": "せろりcelery",
+        "label": ["野菜"]
+    },
+    {
+        "name": "トマト",
+        "calory": 0.1896,
+        "protain": 0.007,
+        "q": "とまとtomato",
+        "label": ["野菜"]
+    },
+    {
+        "name": "こんにゃく",
+        "calory": 0.191,
+        "protain": 0.001,
+        "q": "コンニャク蒟蒻konnyaku",
+        "label": ["野菜"]
+    },
+    {
+        "name": "レタス",
+        "calory": 0.1189,
+        "protain": 0.006,
+        "q": "れたすlattuce",
+        "label": ["野菜"]
+    },
+    {
+        "name": "醤油",
+        "calory": 0.7222,
+        "protain": 0.077,
+        "q": "しょうゆショウユsoysauce",
+        "label": ["調味料"]
+    },
+    {
+        "name": "砂糖",
+        "calory": 3.8888,
+        "protain": 0,
+        "q": "さとうサトウsugar",
+        "label": ["調味料"]
+    },
+    {
+        "name": "穀物酢",
+        "calory": 0.25,
+        "protain": 0.001,
+        "q": "おすこくもつすコクモツスvinegar",
+        "label": ["調味料"]
+    },
+    {
+        "name": "ガラスープ",
+        "calory": 2.19,
+        "protain": 0.01,
+        "q": "がらすーぷgarasoup",
+        "label": ["調味料"]
+    },
+    {
+        "name": "コンソメ（味の素）",
+        "calory": 2.264,
+        "protain": 0.07,
+        "q": "こんそめconsomme",
+        "label": ["調味料"]
+    },
+    {
+        "name": "味噌",
+        "calory": 1.98,
+        "protain": 0.097,
+        "q": "みそミソmiso",
+        "label": ["調味料"]
+    },
+    {
+        "name": "塩",
+        "calory": 0,
+        "protain": 0,
+        "q": "しおシオsalt",
+        "label": ["調味料"]
+    },
+    {
+        "name": "米酢",
+        "calory": 0.46,
+        "protain": 0.002,
+        "q": "おすこめずコメズvinegar",
+        "label": ["調味料"]
+    },
+    {
+        "name": "みりん",
+        "calory": 2.26,
+        "protain": 0.003,
+        "q": "ミリン味醂",
+        "label": ["調味料"]
+    },
+    {
+        "name": "日本酒",
+        "calory": 1.09,
+        "protain": 0.004,
+        "q": "にほんしゅニホンシュsake",
+        "label": ["調味料"]
+    },
+    {
+        "name": "鶏の胸肉(皮なし)",
+        "calory": 1.08,
+        "protain": 0.223,
+        "q": "torinomuneniku鳥の胸肉とりのむねにくトリノムネニクChickenBreast",
+        "label": ["肉"]
+    },
+    {
+        "name": "トマト",
+        "calory": 0.19,
+        "protain": 0.007,
+        "q": "tomatoとまと",
+        "label": ["野菜"]
+    },
+    {
+        "name": "とうもろこし",
+        "calory": 0.92,
+        "protain": 0.032,
+        "q": "cornトウモロコシコーンこーん",
+        "label": ["野菜"]
+    },
+    {
+        "name": "たけのこ",
+        "calory": 0.26,
+        "protain": 0.036,
+        "q": "takenoko筍タケノコ竹の子bumbooShootSprout",
+        "label": ["野菜"]
+    },
+    {
+        "name": "しょうが",
+        "calory": 0.3,
+        "protain": 0.009,
+        "q": "gingerショウガジンジャーじんじゃー生姜",
+        "label": ["野菜"]
+    },
+    {
+        "name": "ブナシメジ",
+        "calory": 0.18,
+        "protain": 0.027,
+        "q": "bunasimeziぶなしめじbrownClamshellMushroom",
+        "label": ["野菜", "きのこ"]
+    },
+    {
+        "name": "しいたけ",
+        "calory": 0.18,
+        "protain": 0.03,
+        "q": "shiitakeシイタケ椎茸",
+        "label": ["野菜", "きのこ"]
+    },
+    {
+        "name": "さつまいも",
+        "calory": 1.32,
+        "protain": 0.012,
+        "q": "sweetpotatoサツマイモsatumaimo",
+        "label": ["野菜", "いも"]
+    },
+    {
+        "name": "きゅうり",
+        "calory": 0.14,
+        "protain": 0.01,
+        "q": "cucumberキュウリkyuuri",
+        "label": ["野菜"]
+    },
+    {
+        "name": "えのきたけ",
+        "calory": 0.22,
+        "protain": 0.027,
+        "q": "enokiエノキタケ",
+        "label": ["野菜", "きのこ"]
+    },
+    {
+        "name": "アスパラガス",
+        "calory": 0.22,
+        "protain": 0.026,
+        "q": "asparagusあすぱらがすasuparagasu",
+        "label": ["野菜"]
+    },
+    {
+        "name": "かぶ",
+        "calory": 0.2,
+        "protain": 0.007,
+        "q": "kabu蕪カブturnip",
+        "label": ["野菜", "根菜"]
+    },
+    {
+        "name": "カボチャ",
+        "calory": 0.91,
+        "protain": 0.019,
+        "q": "pumpkinパンプキンぱんぷきんかぼちゃkabocha",
+        "label": ["野菜", "実"]
+    },
+    {
+        "name": "小松菜",
+        "calory": 0.14,
+        "protain": 0.015,
+        "q": "komatsunaJapaneseMusterdSpinachこまつなコマツナ",
+        "label": ["野菜"]
+    },
+    {
+        "name": "人参",
+        "calory": 0.37,
+        "protain": 0.006,
+        "q": "carrotニンジンにんじんきゃろっとキャロット",
+        "label": ["野菜", "根菜"]
+    },
+    {
+        "name": "茄子",
+        "calory": 0.22,
+        "protain": 0.01,
+        "q": "eggplantなすナス",
+        "label": ["野菜"]
+    },
+    {
+        "name": "じゃがいも",
+        "calory": 0.76,
+        "protain": 0.016,
+        "q": "potatoジャガイモぽてとポテト",
+        "label": ["野菜", "いも"]
+    },
+    {
+        "name": "ニンニク",
+        "calory": 1.34,
+        "protain": 0.06,
+        "q": "garlic大蒜にんにくガーリックがーりっく",
+        "label": ["野菜"]
+    },
+    {
+        "name": "玉ねぎ",
+        "calory": 0.37,
+        "protain": 0.01,
+        "q": "onionオニオンおにおん玉葱たまねぎタマネギ",
+        "label": ["野菜"]
+    },
+    {
+        "name": "ピーマン",
+        "calory": 0.22,
+        "protain": 0.009,
+        "q": "bellPeppersぴーまん",
+        "label": ["野菜"]
+    },
+    {
+        "name": "長ネギ",
+        "calory": 0.28,
+        "protain": 0.005,
+        "q": "JapaneseLeekながねぎナガネギ",
+        "label": ["野菜"]
+    },
+    {
+        "name": "ツナ（水煮）",
+        "calory": 0.71,
+        "protain": 0.16,
+        "q": "tunaつなマグロまぐろ",
+        "label": ["魚"]
+    },
+    {
+        "name": "コーングリッツ",
+        "calory": 3.553,
+        "protain": 0.082,
+        "q": "cornGritsこーんぐりっつ",
+        "label": ["粉"]
+    },
+    {
+        "name": "コーングリッツ",
+        "calory": 3.553,
+        "protain": 0.082,
+        "q": "cornGritsこーんぐりっつ",
+        "label": ["粉"]
+    },
+    {
+        "name": "全粒粉",
+        "calory": 3.28,
+        "protain": 0.128,
+        "q": "wholewheetflourぜんりゅうふんゼンリュウフンzenryuhun",
+        "label": ["粉"]
+    },
+    {
+        "name": "強力粉",
+        "calory": 3.66,
+        "protain": 0.117,
+        "q": "flourきょうりきこstrongキョウリキコbread",
+        "label": ["粉"]
+    },
+    {
+        "name": "薄力粉",
+        "calory": 3.68,
+        "protain": 0.08,
+        "q": "flourはくりきこハクリキコhakurikiko",
+        "label": ["粉"]
+    },
+    {
+        "name": "ライ麦粉",
+        "calory": 3.51,
+        "protain": 0.085,
+        "q": "ryeFlourらいむぎこ",
+        "label": ["粉"]
+    },
+    {
+        "name": "白インゲン豆",
+        "calory": 0.85,
+        "protain": 0.061,
+        "q": "siroingenmameシロインゲンマメcannelliniWhiteKidneyBean",
+        "label": ["豆"]
+    },
+    {
+        "name": "ひよこ豆",
+        "calory": 1.71,
+        "protain": 0.2,
+        "q": "hiyokomameヒヨコマメGarbanzoBeans",
+        "label": ["豆"]
+    }
+]

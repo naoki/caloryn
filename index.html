@@ -43,8 +43,8 @@
                         <td>
                             <input value="{{item.gram}}" type="number" placeholder="グラム数" min="0" max="1000" ng-model="item.gram" ng-change="calc($index)">
                         </td>
-                        <td><span class="itemCalory" ng-bind="item.itemCalory"></span></td>
-                        <td><span class="itemProtain" ng-bind="item.itemProtain"></span></td>
+                        <td class="itemCaloryCol"><span class="itemCalory" ng-bind="item.itemCalory"></span></td>
+                        <td class="itemCaloryCol"><span class="itemProtain" ng-bind="item.itemProtain"></span></td>
                     </tr>
                 </tbody>
                 <tfoot>

@@ -63,7 +63,7 @@ caloryn.controller('dataCtrl', ['$scope', '$rootScope', '$http', function ($scop
     $scope.data = [];
     $http({
         method: 'get',
-        url: './js/data.json',
+        url: './data/data.json',
         withCredentials: true
     }).
     success(function (data) {

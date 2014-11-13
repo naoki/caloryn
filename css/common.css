@@ -266,7 +266,7 @@ ul.labels li span:hover{
     -moz-border-radius: 4px;
     clear: both;
 }
-.totalProtain, .totalCalory {
+.itemCaloryCol, .totalWeight, .totalProtain, .totalCalory {
     text-align: center;
 }
 .item-remover {
