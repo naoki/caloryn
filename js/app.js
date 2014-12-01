@@ -12,11 +12,15 @@ caloryn.config(['$routeProvider',
                 templateUrl: 'tpl/login.html',
                 controller: 'loginController'
             }).
-            when('/date', {
-                templateUrl: 'tpl/date.html',
-                controller: 'dateController'
+            when('/users/:userId', {
+                templateUrl: 'tpl/user.html',
+                controller: 'userController'
             }).
-            when('/meals/:mealId', {
+            when('/users/:userId/:dateId', {
+                templateUrl: 'tpl/user.html',
+                controller: 'userController'
+            }).
+            when('/users/:userId/:dateId/:mealSeq', {
                 templateUrl: 'tpl/meals.html',
                 controller: 'mealController'
             }).

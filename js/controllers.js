@@ -1,19 +1,56 @@
 
 var calorynControllers = angular.module('caloryn.controllers', [
-    'angularLocalStorage'
+    'angularLocalStorage',
+    'ui.bootstrap'
 ]);
 
+// login
 calorynControllers.controller('loginController', [
-    '$scope', '$rootScope',
-    function ($scope, $rootScope) {
-        // login
+    '$scope', '$rootScope', '$location', 'storage',
+    function ($scope, $rootScope, $location, storage) {
+        var user = storage.get('user');
+        if (!user) {
+            var timestamp = Math.round((new Date()).getTime() / 1000);
+            var ShaObj = new jsSHA(timestamp, "TEXT");
+            var hash = ShaObj.getHash("SHA-256", "HEX");
+            storage.set('user', hash);
+            user = hash;
+        }
+        $location.path('/users/'+user);
     }
+
 ]);
 
-calorynControllers.controller('dateController', [
-    '$scope', '$rootScope',
-    function ($scope, $rootScope) {
-        // date
+
+// user
+calorynControllers.controller('userController', [
+    '$scope', '$rootScope', '$location', 'storage',
+    function ($scope, $rootScope, $location, storage) {
+        var current = new Date();
+        $scope.year = current.getFullYear();
+        $scope.month = current.getMonth() + 1;
+        $scope.date = current.getDate();
+        $scope.curDate = $scope.year + ('0'+$scope.month).slice(-2) + ('0'+$scope.date).slice(-2);
+        var user = storage.get('user');
+        storage.bind($scope, 'meals');
+
+        $scope.meals = {};
+        $scope.meals[$scope.curDate] = {
+                1: true,
+                2: false,
+                3: true,
+                4: false,
+                5: true,
+                6: false
+            };
+
+        $scope.hasActive = function (num) {
+            return ($scope.meals[$scope.curDate][num]) ? 'info': '';
+        }
+
+        $scope.editMeal = function (num) {
+            $location.path('/users/'+user+'/'+$scope.curDate+'/'+num);
+        }
     }
 ]);
 

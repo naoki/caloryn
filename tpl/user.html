@@ -1,0 +1,11 @@
+<h1>{{month}} 月 {{date}} 日</h1>
+
+
+<table class="table table-condensed meal-menu">
+    <tr ng-class="hasActive(1)"><td ng-click="editMeal(1)">朝食</td></tr>
+    <tr ng-class="hasActive(2)"><td ng-click="editMeal(2)">朝のおやつ</td></tr>
+    <tr ng-class="hasActive(3)"><td ng-click="editMeal(3)">昼食</td></tr>
+    <tr ng-class="hasActive(4)"><td ng-click="editMeal(4)">昼のおやつ</td></tr>
+    <tr ng-class="hasActive(5)"><td ng-click="editMeal(5)">夕食</td></tr>
+    <tr ng-class="hasActive(6)"><td ng-click="editMeal(6)">夕のおやつ</td></tr>
+</table>
