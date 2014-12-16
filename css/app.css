@@ -1,2 +1,26 @@
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
-.meal-menu td { cursor: pointer;}
+.meal-menu { cursor: pointer;}
+.menu-done {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid #ddd;
+}
+.menu-yet {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.menu-yet:hover {
+    background-color: #eee;
+}
+.calorie-column {
+    text-align: right;
+}
+.ingredients {
+    padding:20px;
+}
+.ingredients button {
+    margin: 4px;
+}

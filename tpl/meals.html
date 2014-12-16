@@ -1,1 +1,58 @@
-meals
+<div ng-init="ingredientsData = getIngredientsData(); alert(111);"></div>
+
+<div class="highlight">
+    {{ message }}
+</div>
+
+<form class="form-horizontal" role="form">
+    <input class="form-conrtol" ng-model="searchText" placeholder=" 食材/料理を絞り込み">
+</form>
+
+<div class="userInputArea">
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>食材/料理</th>
+                <th>weight(g)</th>
+                <th>(Kcal)</th>
+                <th>protain(g)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td>
+                    <button type="button" class="close" ng-click="itemRemove($index)"><span aria-hidden="true">&times;</span><span  class="sr-only">Close</span></button>
+                </td>
+                <td>
+                    <span class="itemName" ng-bind="item.name"></span>
+                </td>
+                <td>
+                    <input type="number" placeholder="グラム数" min="0" max="1000" ng-model="item.gram" ng-change ="itemCalc($index)">
+                </td>
+                <td class="itemCaloryCol"><span class="itemCalory" ng-bind="item.itemCalory"></span></td>
+                <td class="itemCaloryCol"><span class="itemProtain" ng-bind="item.itemProtain"></span></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan=2 style="text-align:right">TOTAL</td>
+                <td ng-bind="totalWeight" class="totalWeight"></td>
+                <td ng-bind="totalCalory" class="totalCalory"></td>
+                <td ng-bind="totalProtain" class="totalProtain"></td>
+            </tr>
+            <tr>
+                <td colspan=5>
+                    <button type="submit" class="pull-right" ng-click="saveAll()">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="hidden">Save</span>
+                    </button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div ng-class="{hidden: isDataVisible()}" class="ingredients bg-info container">
+    <button ng-repeat="row in data | filter:searchText" ng-click="addItem(row)" class="btn btn-default btn-sm">{{row.name}}</button>
+    <button ng-if="results.length == 0">No results found...</button>
+</div>

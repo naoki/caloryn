@@ -1,1 +1,13 @@
-date
+<h1>{{month}} 月 {{date}} 日</h1>
+
+<div ng-init="menus = [
+'朝食','朝のおやつ','昼食','昼のおやつ','夕食','夜のおやつ'
+]" class="container">
+
+    <div class="row meal-menu" ng-repeat="menu in menus" ng-click="editMeal($index)" ng-class="isDone($index)">
+        <div class="col-xs-8">{{menu}}</div>
+        <div class="col-xs-4 calorie-column">{{meals[$index]}} Kcal</div>
+    </div>
+
+</div>
+

@@ -6,139 +6,145 @@ var calorynControllers = angular.module('caloryn.controllers', [
 
 // login
 calorynControllers.controller('loginController', [
-    '$scope', '$rootScope', '$location', 'storage',
-    function ($scope, $rootScope, $location, storage) {
+    '$scope', '$location', 'storage',
+    function ($scope,  $location, storage) {
         var user = storage.get('user');
         if (!user) {
-            var timestamp = Math.round((new Date()).getTime() / 1000);
-            var ShaObj = new jsSHA(timestamp, "TEXT");
-            var hash = ShaObj.getHash("SHA-256", "HEX");
+            var hash = $com.auth.makeHash();
             storage.set('user', hash);
             user = hash;
         }
-        $location.path('/users/'+user);
+        $scope.current_date = $com.date.getCurrentStr();
+        $location.path('/users/'+user+'/'+$scope.current_date);
     }
-
 ]);
 
 
-// user
-calorynControllers.controller('userController', [
-    '$scope', '$rootScope', '$location', 'storage',
-    function ($scope, $rootScope, $location, storage) {
-        var current = new Date();
-        $scope.year = current.getFullYear();
-        $scope.month = current.getMonth() + 1;
-        $scope.date = current.getDate();
-        $scope.curDate = $scope.year + ('0'+$scope.month).slice(-2) + ('0'+$scope.date).slice(-2);
-        var user = storage.get('user');
-        storage.bind($scope, 'meals');
-
-        $scope.meals = {};
-        $scope.meals[$scope.curDate] = {
-                1: true,
-                2: false,
-                3: true,
-                4: false,
-                5: true,
-                6: false
-            };
-
-        $scope.hasActive = function (num) {
-            return ($scope.meals[$scope.curDate][num]) ? 'info': '';
+// date
+calorynControllers.controller('dateController', [
+    '$scope', '$location', 'storage', 'userData',
+    function ($scope, $location, $storage, $userData) {
+        var path = $location.path();
+        var user = $com.func.getUser($storage);
+        $scope.current_date = $com.format.interpretPath(path).dateId;
+        var dt = $com.format.splitDate($scope.current_date);
+        $scope.month = dt.month;
+        $scope.date  = dt.date;
+        var data = $userData.getAll();
+        if (_.isUndefined(data[$scope.current_date]) === true) {
+            data = $com.func.dateInitialize(data, $scope.current_date);
+            $storage.set("data", data);
         }
+        var calories = [];
+        _.map(data[$scope.current_date].summary, function (val, key) {
+            calories[key] = val.calorie;
+        });
+        $scope.meals = calories;
+
+        $scope.isDone = function (num) {
+            return ($scope.meals[num] > 0) ? 'menu-done':'menu-yet';
+       }
 
         $scope.editMeal = function (num) {
-            $location.path('/users/'+user+'/'+$scope.curDate+'/'+num);
+            $location.path('/users/'+user+'/'+$scope.current_date+'/'+num);
         }
     }
 ]);
 
 calorynControllers.controller('mealController', [
-    '$scope', '$rootScope',
-    function ($scope, $rootScope) {
-        // meal
-    }
-]);
-
-
-/*
-
-calorynControllers.controller('wrapperCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
-    $scope.searchText = '';
-    $scope.checkDataArea = function () {
-        $rootScope.$broadcast('filterUpdate', $scope.searchText);
-    }
-    $scope.$on('addItem', function (e, item) {
+    '$scope', '$http', '$location', 'storage', 'userData', '$q',
+    function ($scope, $http, $location, $storage, $userData, $q) {
         $scope.searchText = '';
-        $scope.checkDataArea();
-    });
-}]);
-
-calorynControllers.controller('MessageCtrl', ['$scope', function($scope) {
-    $scope.message = '';
-    $scope.$on('errorMessage', function (e, data) {
-        $scope.message = data;
-    });
-}]);
-
-calorynControllers.controller('itemsCtrl', ['$scope', function ($scope) {
-    $scope.items = [];
-    $scope.totalWeight  = 0;
-    $scope.totalProtain = 0;
-    $scope.totalCalory  = 0;
-    $scope.remove = function (index) {
-        $scope.items.splice(index, 1);
-        $scope.resetTotalResult();
-    }
-    $scope.calc = function (index) {
-        var data = $scope.items[index];
-        data.itemProtain = Math.round(data.protain * data.gram);
-        data.itemCalory  = Math.round(data.calory * data.gram);
-        $scope.resetTotalResult();
-    }
-    $scope.resetTotalResult = function () {
-        var x, len;
+        $scope.message = '';
+        var paths = $com.format.interpretPath($location.path());
+        $scope.items = [];
         $scope.totalWeight  = 0;
         $scope.totalProtain = 0;
         $scope.totalCalory  = 0;
-        for (x = 0, len = $scope.items.length; x < len; x++) {
-            $scope.totalWeight += $scope.items[x].gram;
-            $scope.totalProtain += $scope.items[x].itemProtain;
-            $scope.totalCalory  += $scope.items[x].itemCalory;
-        }
-    }
-    $scope.$on('addItem', function (e, data) {
-        $scope.items.push({
-            "name": data.name,
-            "gram": 0,
-            "protain": data.protain,
-            "calory": data.calory,
-            "itemCalory": 0,
-            "itemProtain": 0
-        });
-    });
-}]);
+        $scope.data = [];
 
-calorynControllers.controller('dataCtrl', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
-    $scope.searchText = $scope.$parent.searchText;
-    $scope.data = [];
-    $http({
-        method: 'get',
-        url: './data/data.json',
-        withCredentials: true
-    }).
-    success(function (data) {
-        $scope.data = data;
-    }).
-    error(function (data, status) {
-        $rootScope.$broadcast('errorMessage', '通信中にエラーが発生しました')
-    });
-    $scope.click = function (data) {
-        $rootScope.$broadcast('addItem', data);
+        $http({
+            method: 'get',
+            url: './data/data.json',
+            withCredentials: true
+        }).
+        success(function (data) {
+            $scope.ingredientsData = data;
+        }).
+        error(function (data, status) {
+            console.log(status);
+        });
+
+        // サジェストアイテム表示制御
+        $scope.isDataVisible = function () {
+            return ($scope.searchText == '');
+        }
+
+        // アイテム追加
+        $scope.addItem = function (data) {
+            $scope.items.push({
+                "id": data.id,
+                "name": data.name,
+                "gram": 0,
+                "protain": data.protain,
+                "calorie": data.calorie,
+                "itemCalory": 0,
+                "itemProtain": 0
+            });
+            $scope.searchText = '';
+        }
+
+        // データ保存
+        $scope.saveAll = function () {
+            var data = {};
+            var summary = {};
+            data[paths.mealId] = [];
+            var result = {};
+            _.map($scope.items, function (val, key) {
+                data[paths.mealId].push({
+                    "id": val.id,
+                    "gram": val.gram
+                });
+            });
+            summary[paths.mealId] = {
+                "calorie" : $scope.totalCalory,
+                "protain": $scope.totalProtain,
+                "weight" : $scope.totalWeight
+            };
+            result[paths.dateId] = {
+                "detail": data,
+                "summary": summary
+            };
+            $storage.set("data", result);
+        }
+
+        // トータル値の再計算
+        $scope.resetTotalResult = function () {
+            var x, len;
+            $scope.totalWeight  = 0;
+            $scope.totalProtain = 0;
+            $scope.totalCalory  = 0;
+            for (x = 0, len = $scope.items.length; x < len; x++) {
+                $scope.totalWeight += $scope.items[x].gram;
+                $scope.totalProtain += $scope.items[x].itemProtain;
+                $scope.totalCalory  += $scope.items[x].itemCalory;
+            }
+        }
+
+        // 入力データ削除
+        $scope.itemRemove = function (index) {
+            $scope.items.splice(index, 1);
+            $scope.resetTotalResult();
+        }
+
+        // データ更新
+        $scope.itemCalc = function (index) {
+            var data = $scope.items[index];
+            data.itemProtain = Math.round(data.protain * data.gram);
+            data.itemCalory  = Math.round(data.calorie * data.gram);
+            $scope.resetTotalResult();
+        }
+
     }
-    $scope.$on('filterUpdate', function (e, text) {
-        $scope.searchText = text;
-    });
-}]);
-*/
+]);
+
