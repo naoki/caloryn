@@ -16,7 +16,7 @@
                 <th>食材/料理</th>
                 <th>weight(g)</th>
                 <th>(Kcal)</th>
-                <th>protain(g)</th>
+                <th>protein(g)</th>
             </tr>
         </thead>
         <tbody>
@@ -31,7 +31,7 @@
                     <input type="number" placeholder="グラム数" min="0" max="1000" ng-model="item.gram" ng-change ="itemCalc($index)">
                 </td>
                 <td class="itemCaloryCol"><span class="itemCalory" ng-bind="item.itemCalory"></span></td>
-                <td class="itemCaloryCol"><span class="itemProtain" ng-bind="item.itemProtain"></span></td>
+                <td class="itemCaloryCol"><span class="itemProtein" ng-bind="item.itemProtein"></span></td>
             </tr>
         </tbody>
         <tfoot>
@@ -39,7 +39,7 @@
                 <td colspan=2 style="text-align:right">TOTAL</td>
                 <td ng-bind="totalWeight" class="totalWeight"></td>
                 <td ng-bind="totalCalory" class="totalCalory"></td>
-                <td ng-bind="totalProtain" class="totalProtain"></td>
+                <td ng-bind="totalProtein" class="totalProtein"></td>
             </tr>
             <tr>
                 <td colspan=5>

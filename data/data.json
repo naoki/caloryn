@@ -3,7 +3,7 @@
         "id": 1,
         "name": "大根",
         "calorie": 0.18,
-        "protain": 0.004,
+        "protein": 0.004,
         "q": "daikonダイコンだいこんJapaneseRadish",
         "label": ["野菜"]
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "name": "キャベツ",
         "calorie": 0.23,
-        "protain": 0.013,
+        "protein": 0.013,
         "q": "kyabetsuきゃべつcabbage",
         "label": ["野菜"]
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "name": "アボカド",
         "calorie": 1.873,
-        "protain": 0.025,
+        "protein": 0.025,
         "q": "あぼかどavocado",
         "label": ["野菜"]
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "name": "セロリ",
         "calorie": 0.15,
-        "protain": 0.01,
+        "protein": 0.01,
         "q": "せろりcelery",
         "label": ["野菜"]
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "name": "トマト",
         "calorie": 0.1896,
-        "protain": 0.007,
+        "protein": 0.007,
         "q": "とまとtomato",
         "label": ["野菜"]
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "name": "こんにゃく",
         "calorie": 0.191,
-        "protain": 0.001,
+        "protein": 0.001,
         "q": "コンニャク蒟蒻konnyaku",
         "label": ["野菜"]
     },
@@ -51,7 +51,7 @@
         "id": 7,
         "name": "レタス",
         "calorie": 0.1189,
-        "protain": 0.006,
+        "protein": 0.006,
         "q": "れたすlattuce",
         "label": ["野菜"]
     },
@@ -59,7 +59,7 @@
         "id": 8,
         "name": "醤油",
         "calorie": 0.7222,
-        "protain": 0.077,
+        "protein": 0.077,
         "q": "しょうゆショウユsoysauce",
         "label": ["調味料"]
     },
@@ -67,7 +67,7 @@
         "id": 9,
         "name": "砂糖",
         "calorie": 3.8888,
-        "protain": 0,
+        "protein": 0,
         "q": "さとうサトウsugar",
         "label": ["調味料"]
     },
@@ -75,7 +75,7 @@
         "id": 10,
         "name": "穀物酢",
         "calorie": 0.25,
-        "protain": 0.001,
+        "protein": 0.001,
         "q": "おすこくもつすコクモツスvinegar",
         "label": ["調味料"]
     },
@@ -83,7 +83,7 @@
         "id": 11,
         "name": "ガラスープ",
         "calorie": 2.19,
-        "protain": 0.01,
+        "protein": 0.01,
         "q": "がらすーぷgarasoup",
         "label": ["調味料"]
     },
@@ -91,7 +91,7 @@
         "id": 12,
         "name": "コンソメ（味の素）",
         "calorie": 2.264,
-        "protain": 0.07,
+        "protein": 0.07,
         "q": "こんそめconsomme",
         "label": ["調味料"]
     },
@@ -99,7 +99,7 @@
         "id": 13,
         "name": "味噌",
         "calorie": 1.98,
-        "protain": 0.097,
+        "protein": 0.097,
         "q": "みそミソmiso",
         "label": ["調味料"]
     },
@@ -107,7 +107,7 @@
         "id": 14,
         "name": "塩",
         "calorie": 0,
-        "protain": 0,
+        "protein": 0,
         "q": "しおシオsalt",
         "label": ["調味料"]
     },
@@ -115,7 +115,7 @@
         "id": 15,
         "name": "米酢",
         "calorie": 0.46,
-        "protain": 0.002,
+        "protein": 0.002,
         "q": "おすこめずコメズvinegar",
         "label": ["調味料"]
     },
@@ -123,7 +123,7 @@
         "id": 16,
         "name": "みりん",
         "calorie": 2.26,
-        "protain": 0.003,
+        "protein": 0.003,
         "q": "ミリン味醂",
         "label": ["調味料"]
     },
@@ -131,7 +131,7 @@
         "id": 17,
         "name": "日本酒",
         "calorie": 1.09,
-        "protain": 0.004,
+        "protein": 0.004,
         "q": "にほんしゅニホンシュsake",
         "label": ["調味料"]
     },
@@ -139,7 +139,7 @@
         "id": 18,
         "name": "鶏の胸肉(皮なし)",
         "calorie": 1.08,
-        "protain": 0.223,
+        "protein": 0.223,
         "q": "torinomuneniku鳥の胸肉とりのむねにくトリノムネニクChickenBreast",
         "label": ["肉"]
     },
@@ -147,7 +147,7 @@
         "id": 19,
         "name": "トマト",
         "calorie": 0.19,
-        "protain": 0.007,
+        "protein": 0.007,
         "q": "tomatoとまと",
         "label": ["野菜"]
     },
@@ -155,7 +155,7 @@
         "id": 20,
         "name": "とうもろこし",
         "calorie": 0.92,
-        "protain": 0.032,
+        "protein": 0.032,
         "q": "cornトウモロコシコーンこーん",
         "label": ["野菜"]
     },
@@ -163,7 +163,7 @@
         "id": 21,
         "name": "たけのこ",
         "calorie": 0.26,
-        "protain": 0.036,
+        "protein": 0.036,
         "q": "takenoko筍タケノコ竹の子bumbooShootSprout",
         "label": ["野菜"]
     },
@@ -171,7 +171,7 @@
         "id": 22,
         "name": "しょうが",
         "calorie": 0.3,
-        "protain": 0.009,
+        "protein": 0.009,
         "q": "gingerショウガジンジャーじんじゃー生姜",
         "label": ["野菜"]
     },
@@ -179,7 +179,7 @@
         "id": 23,
         "name": "ブナシメジ",
         "calorie": 0.18,
-        "protain": 0.027,
+        "protein": 0.027,
         "q": "bunasimeziぶなしめじbrownClamshellMushroom",
         "label": ["野菜", "きのこ"]
     },
@@ -187,7 +187,7 @@
         "id": 24,
         "name": "しいたけ",
         "calorie": 0.18,
-        "protain": 0.03,
+        "protein": 0.03,
         "q": "shiitakeシイタケ椎茸",
         "label": ["野菜", "きのこ"]
     },
@@ -195,7 +195,7 @@
         "id": 25,
         "name": "さつまいも",
         "calorie": 1.32,
-        "protain": 0.012,
+        "protein": 0.012,
         "q": "sweetpotatoサツマイモsatumaimo",
         "label": ["野菜", "いも"]
     },
@@ -203,7 +203,7 @@
         "id": 26,
         "name": "きゅうり",
         "calorie": 0.14,
-        "protain": 0.01,
+        "protein": 0.01,
         "q": "cucumberキュウリkyuuri",
         "label": ["野菜"]
     },
@@ -211,7 +211,7 @@
         "id": 27,
         "name": "えのきたけ",
         "calorie": 0.22,
-        "protain": 0.027,
+        "protein": 0.027,
         "q": "enokiエノキタケ",
         "label": ["野菜", "きのこ"]
     },
@@ -219,7 +219,7 @@
         "id": 28,
         "name": "アスパラガス",
         "calorie": 0.22,
-        "protain": 0.026,
+        "protein": 0.026,
         "q": "asparagusあすぱらがすasuparagasu",
         "label": ["野菜"]
     },
@@ -227,7 +227,7 @@
         "id": 29,
         "name": "かぶ",
         "calorie": 0.2,
-        "protain": 0.007,
+        "protein": 0.007,
         "q": "kabu蕪カブturnip",
         "label": ["野菜", "根菜"]
     },
@@ -235,7 +235,7 @@
         "id": 30,
         "name": "カボチャ",
         "calorie": 0.91,
-        "protain": 0.019,
+        "protein": 0.019,
         "q": "pumpkinパンプキンぱんぷきんかぼちゃkabocha",
         "label": ["野菜", "実"]
     },
@@ -243,7 +243,7 @@
         "id": 31,
         "name": "小松菜",
         "calorie": 0.14,
-        "protain": 0.015,
+        "protein": 0.015,
         "q": "komatsunaJapaneseMusterdSpinachこまつなコマツナ",
         "label": ["野菜"]
     },
@@ -251,7 +251,7 @@
         "id": 32,
         "name": "人参",
         "calorie": 0.37,
-        "protain": 0.006,
+        "protein": 0.006,
         "q": "carrotニンジンにんじんきゃろっとキャロット",
         "label": ["野菜", "根菜"]
     },
@@ -259,7 +259,7 @@
         "id": 33,
         "name": "茄子",
         "calorie": 0.22,
-        "protain": 0.01,
+        "protein": 0.01,
         "q": "eggplantなすナス",
         "label": ["野菜"]
     },
@@ -267,7 +267,7 @@
         "id": 34,
         "name": "じゃがいも",
         "calorie": 0.76,
-        "protain": 0.016,
+        "protein": 0.016,
         "q": "potatoジャガイモぽてとポテト",
         "label": ["野菜", "いも"]
     },
@@ -275,7 +275,7 @@
         "id": 35,
         "name": "ニンニク",
         "calorie": 1.34,
-        "protain": 0.06,
+        "protein": 0.06,
         "q": "garlic大蒜にんにくガーリックがーりっく",
         "label": ["野菜"]
     },
@@ -283,7 +283,7 @@
         "id": 36,
         "name": "玉ねぎ",
         "calorie": 0.37,
-        "protain": 0.01,
+        "protein": 0.01,
         "q": "onionオニオンおにおん玉葱たまねぎタマネギ",
         "label": ["野菜"]
     },
@@ -291,7 +291,7 @@
         "id": 37,
         "name": "ピーマン",
         "calorie": 0.22,
-        "protain": 0.009,
+        "protein": 0.009,
         "q": "bellPeppersぴーまん",
         "label": ["野菜"]
     },
@@ -299,7 +299,7 @@
         "id": 38,
         "name": "長ネギ",
         "calorie": 0.28,
-        "protain": 0.005,
+        "protein": 0.005,
         "q": "JapaneseLeekながねぎナガネギ",
         "label": ["野菜"]
     },
@@ -307,7 +307,7 @@
         "id": 39,
         "name": "ツナ（水煮）",
         "calorie": 0.71,
-        "protain": 0.16,
+        "protein": 0.16,
         "q": "tunaつなマグロまぐろ",
         "label": ["魚"]
     },
@@ -315,7 +315,7 @@
         "id": 40,
         "name": "コーングリッツ",
         "calorie": 3.553,
-        "protain": 0.082,
+        "protein": 0.082,
         "q": "cornGritsこーんぐりっつ",
         "label": ["粉"]
     },
@@ -323,7 +323,7 @@
         "id": 41,
         "name": "コーングリッツ",
         "calorie": 3.553,
-        "protain": 0.082,
+        "protein": 0.082,
         "q": "cornGritsこーんぐりっつ",
         "label": ["粉"]
     },
@@ -331,7 +331,7 @@
         "id": 42,
         "name": "全粒粉",
         "calorie": 3.28,
-        "protain": 0.128,
+        "protein": 0.128,
         "q": "wholewheetflourぜんりゅうふんゼンリュウフンzenryuhun",
         "label": ["粉"]
     },
@@ -339,7 +339,7 @@
         "id": 43,
         "name": "強力粉",
         "calorie": 3.66,
-        "protain": 0.117,
+        "protein": 0.117,
         "q": "flourきょうりきこstrongキョウリキコbread",
         "label": ["粉"]
     },
@@ -347,7 +347,7 @@
         "id": 44,
         "name": "薄力粉",
         "calorie": 3.68,
-        "protain": 0.08,
+        "protein": 0.08,
         "q": "flourはくりきこハクリキコhakurikiko",
         "label": ["粉"]
     },
@@ -355,7 +355,7 @@
         "id": 45,
         "name": "ライ麦粉",
         "calorie": 3.51,
-        "protain": 0.085,
+        "protein": 0.085,
         "q": "ryeFlourらいむぎこ",
         "label": ["粉"]
     },
@@ -363,7 +363,7 @@
         "id": 46,
         "name": "白インゲン豆",
         "calorie": 0.85,
-        "protain": 0.061,
+        "protein": 0.061,
         "q": "siroingenmameシロインゲンマメcannelliniWhiteKidneyBean",
         "label": ["豆"]
     },
@@ -371,7 +371,7 @@
         "id": 47,
         "name": "ひよこ豆",
         "calorie": 1.71,
-        "protain": 0.2,
+        "protein": 0.2,
         "q": "hiyokomameヒヨコマメGarbanzoBeans",
         "label": ["豆"]
     }

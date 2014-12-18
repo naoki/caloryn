@@ -1,14 +1,17 @@
 'use strict';
 
-var caloryn = angular.module('caloryn', [
+var ingredge = angular.module('ingredge', [
     'ngRoute',
-    'caloryn.controllers'
+    'ingredge.controllers'
 ]);
 
-caloryn.factory('userData', [
+ingredge.factory('userData', [
     '$rootScope', 'storage',
     function ($rootScope, $storage) {
         var data = $storage.get('data');
+        if (_.isNull(data) === true) {
+            data = {};
+        }
         return {
             getAll: function () {
                 return data;
@@ -20,12 +23,22 @@ caloryn.factory('userData', [
                     }
                 }
                 return undefined;
+            },
+            getDetail: function (dateId, mealId) {
+                if (_.isUndefined(data[dateId]) === false) {
+                    if (_.isUndefined(data[dateId].detail) === false) {
+                        if (_.isUndefined(data[dateId].detail[mealId]) === false) {
+                            return data[dateId].detail[mealId];
+                        }
+                    }
+                }
+                return undefined;
             }
         };
     }
 ]);
 
-caloryn.config(['$routeProvider',
+ingredge.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
             when('/login', {
@@ -59,12 +72,12 @@ var $com = {
         dateInitialize: function (data, date) {
             data[date] = {
                 summary: [
-                    { "calorie": 0, "protain": 0, "weight" : 0},
-                    { "calorie": 0, "protain": 0, "weight" : 0},
-                    { "calorie": 0, "protain": 0, "weight" : 0},
-                    { "calorie": 0, "protain": 0, "weight" : 0},
-                    { "calorie": 0, "protain": 0, "weight" : 0},
-                    { "calorie": 0, "protain": 0, "weight" : 0}
+                    { "calorie": 0, "protein": 0, "weight" : 0},
+                    { "calorie": 0, "protein": 0, "weight" : 0},
+                    { "calorie": 0, "protein": 0, "weight" : 0},
+                    { "calorie": 0, "protein": 0, "weight" : 0},
+                    { "calorie": 0, "protein": 0, "weight" : 0},
+                    { "calorie": 0, "protein": 0, "weight" : 0}
                 ]
             };
             return data;

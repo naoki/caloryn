@@ -1,11 +1,11 @@
 
-var calorynControllers = angular.module('caloryn.controllers', [
+var ingredgeControllers = angular.module('ingredge.controllers', [
     'angularLocalStorage',
     'ui.bootstrap'
 ]);
 
 // login
-calorynControllers.controller('loginController', [
+ingredgeControllers.controller('loginController', [
     '$scope', '$location', 'storage',
     function ($scope,  $location, storage) {
         var user = storage.get('user');
@@ -21,7 +21,7 @@ calorynControllers.controller('loginController', [
 
 
 // date
-calorynControllers.controller('dateController', [
+ingredgeControllers.controller('dateController', [
     '$scope', '$location', 'storage', 'userData',
     function ($scope, $location, $storage, $userData) {
         var path = $location.path();
@@ -31,7 +31,7 @@ calorynControllers.controller('dateController', [
         $scope.month = dt.month;
         $scope.date  = dt.date;
         var data = $userData.getAll();
-        if (_.isUndefined(data[$scope.current_date]) === true) {
+        if (_.has(data, $scope.current_date) === false) {
             data = $com.func.dateInitialize(data, $scope.current_date);
             $storage.set("data", data);
         }
@@ -51,7 +51,7 @@ calorynControllers.controller('dateController', [
     }
 ]);
 
-calorynControllers.controller('mealController', [
+ingredgeControllers.controller('mealController', [
     '$scope', '$http', '$location', 'storage', 'userData', '$q',
     function ($scope, $http, $location, $storage, $userData, $q) {
         $scope.searchText = '';
@@ -59,21 +59,48 @@ calorynControllers.controller('mealController', [
         var paths = $com.format.interpretPath($location.path());
         $scope.items = [];
         $scope.totalWeight  = 0;
-        $scope.totalProtain = 0;
+        $scope.totalProtein = 0;
         $scope.totalCalory  = 0;
         $scope.data = [];
+        $scope.userData = $userData.getAll();
 
-        $http({
-            method: 'get',
-            url: './data/data.json',
-            withCredentials: true
-        }).
-        success(function (data) {
-            $scope.ingredientsData = data;
-        }).
-        error(function (data, status) {
+        $scope.getIngredientsData = function () {
+            var deferred = $q.defer();
+            $http({
+                method: 'get',
+                url: './data/data.json',
+                withCredentials: true
+            }).
+            success(function (data) {
+                deferred.resolve(data);
+            }).
+            error(function (data, status) {
+                deferred.reject(status);
+            });
+            return deferred.promise;
+        }
+
+        $scope.getDataById = function (data, id, anchor) {
+            var index = anchor || 0;
+            for (; index < data.length; index++) {
+                console.log(data[index]);
+            }
+        }
+
+        // initialize
+        $scope.getIngredientsData().then(function (data) {
+            $scope.data = data;
+            $scope.userData = $userData.getDetail(paths.dateId, paths.mealId);
+            if (_.isUndefined($scope.userData) === false) {
+                var index = 0;
+                _.each($scope.userData, function (userv, userk) {
+                    $scope.getDataById($scope.data, userv.id, index);
+                });
+            }
+        }, function (status) {
             console.log(status);
         });
+
 
         // サジェストアイテム表示制御
         $scope.isDataVisible = function () {
@@ -85,11 +112,11 @@ calorynControllers.controller('mealController', [
             $scope.items.push({
                 "id": data.id,
                 "name": data.name,
-                "gram": 0,
-                "protain": data.protain,
+                "gram": (data.gram) ? data.gram : 0,
+                "protein": data.protein,
                 "calorie": data.calorie,
-                "itemCalory": 0,
-                "itemProtain": 0
+                "itemCalory": (data.gram) ? (data.gram * data.calorie) : 0,
+                "itemProtein": (data.gram) ? (data.gram * data.protein) : 0
             });
             $scope.searchText = '';
         }
@@ -108,7 +135,7 @@ calorynControllers.controller('mealController', [
             });
             summary[paths.mealId] = {
                 "calorie" : $scope.totalCalory,
-                "protain": $scope.totalProtain,
+                "protein": $scope.totalProtein,
                 "weight" : $scope.totalWeight
             };
             result[paths.dateId] = {
@@ -122,11 +149,11 @@ calorynControllers.controller('mealController', [
         $scope.resetTotalResult = function () {
             var x, len;
             $scope.totalWeight  = 0;
-            $scope.totalProtain = 0;
+            $scope.totalProtein = 0;
             $scope.totalCalory  = 0;
             for (x = 0, len = $scope.items.length; x < len; x++) {
                 $scope.totalWeight += $scope.items[x].gram;
-                $scope.totalProtain += $scope.items[x].itemProtain;
+                $scope.totalProtein += $scope.items[x].itemProtein;
                 $scope.totalCalory  += $scope.items[x].itemCalory;
             }
         }
@@ -140,7 +167,7 @@ calorynControllers.controller('mealController', [
         // データ更新
         $scope.itemCalc = function (index) {
             var data = $scope.items[index];
-            data.itemProtain = Math.round(data.protain * data.gram);
+            data.itemProtein = Math.round(data.protein * data.gram);
             data.itemCalory  = Math.round(data.calorie * data.gram);
             $scope.resetTotalResult();
         }
